@@ -59,6 +59,10 @@ epoch 是会根据 Leader 的变化而变化的，当一个 Leader 挂了，新�
 
 </dependency>
 ```
+优点：可重入，自动释放，无单点问题。  
+缺点：羊群效应，一个需要避免的问题是当一个特定的znode 改变的时候ZooKeper 触发了所有watches 的事件。
+还有就是性能上不如使用缓存实现分布式锁。
 ### 参考文献
 - [万字带你入门Zookeeper](https://juejin.im/post/5e184673f265da3df716d449)
 - [10分钟看懂！基于Zookeeper的分布式锁](https://blog.csdn.net/qiangcuo6087/article/details/79067136)
+- [分布式锁实现汇总](https://juejin.im/post/5a20cd8bf265da43163cdd9a)
